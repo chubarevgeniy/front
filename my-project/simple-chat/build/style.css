@@ -1,0 +1,90 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+.form {
+    width: 100%;
+    display: flex;
+    /*border: 1px solid rgba(190, 99, 71, 0.32);*/
+}
+
+.message {
+    color: rgb(27, 107, 121);
+    /* border: 1px solid; */
+    border-radius: 4px;
+    margin: 4px 0;
+    padding: 4px;
+}
+
+input[type=submit] {
+    visibility: collapse;
+}
+
+input {
+    border: 0;
+    /*outline: none;*/
+    height: calc(100% - 20px);
+    min-width: 300px;
+    width: calc(100%);
+    margin: auto;
+}
+
+body {
+    margin: 0;
+    background-color: rgb(65, 161, 161);
+    color: rgb(202, 207, 211);
+    font-size: 32px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    /*line-height: 20px;*/
+    height: 100vh;
+}
+
+.vertical-handler {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.top {
+    display: flex;
+    background-color: rgb(3, 57, 73);
+    height: 50px;
+    justify-content: space-between;
+}
+
+.midle {
+    flex: end;
+    min-height: 300px;
+}
+
+.bottom {
+    display: flex;
+    height: 50px;
+    background-color: rgb(3, 57, 73);
+    justify-content: space-between;
+}
+
+.add-bottom {
+    margin: auto;
+}
+
+container {
+    margin: auto;
+}
+
+.add-button {
+    display: flex;
+}
+
+.send {
+    display:flex;
+}
+
