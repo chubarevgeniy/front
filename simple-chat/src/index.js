@@ -7,8 +7,8 @@ let mid = document.querySelector('.middle');
 
 form.addEventListener('submit', handleSubmit.bind(this));
 //form.addEventListener('keyup', handleKeyPress);
-buttonSend.addEventListener('click', handleSendButton);
-buttonOptions.addEventListener('click', handleOptionsButton);
+buttonSend.addEventListener('click', handleSendButton.bind(this));
+buttonOptions.addEventListener('click', handleOptionsButton.bind(this));
 loadLocalStorge();
 
 function handleOptionsButton(event){
