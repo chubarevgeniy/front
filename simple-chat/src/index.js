@@ -11,6 +11,12 @@ buttonSend.addEventListener('click', handleSendButton.bind(this));
 buttonOptions.addEventListener('click', handleOptionsButton.bind(this));
 loadLocalStorge();
 
+function importAll(r) {
+    return r.keys().map(r);
+}
+  
+const images = importAll(require.context('./img/', false, /\.(png|jpg|svg)$/));
+
 function handleOptionsButton(event){
     clearMassegesStorage();
 }
