@@ -13,10 +13,12 @@ module.exports = {
     context: SRC_PATH,
     entry: {
         index: './index.js',
+        messagepage: './scripts/messagepage.js',
+        dialogpage: './scripts/dialogpage.js'
     },
     output: {
         path: BUILD_PATH,
-        filename: 'bundle.js'
+        filename: '[name]bundle.js'
     },
     module: {
         strictExportPresence: true,
@@ -43,7 +45,7 @@ module.exports = {
                 ],
             },
             {
-                test: /index\.css$/,
+                test: /\.css$/,
                 include: SRC_PATH,
                 use: [
                     {
@@ -71,11 +73,23 @@ module.exports = {
     },
     plugins: [
         new MiniCSSExtractPlugin({
-            filename: 'style.css',
+            filename: 'styles/[name].css',
+            chunks: ['index','messagepage','dialogpage'],
         }),
         new HTMLWebpackPlugin({
             filename: 'index.html',
-            template: './index.html'
+            template: './index.html',
+            chunks: ['index'],
+        }),
+        new HTMLWebpackPlugin({
+            filename: 'messagepage.html',
+            template: './tempaletes/messagepage.html',
+            chunks: ['messagepage'],
+        }),
+        new HTMLWebpackPlugin({
+            filename: 'dialogpage.html',
+            template: './tempaletes/dialogpage.html',
+            chunks: ['dialogpage'],
         })
     ]
 };

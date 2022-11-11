@@ -19,6 +19,7 @@
     "webpack-dev-server": "^3.8.1"
   },
   "dependencies": {
-    "file-loader": "^6.2.0"
+    "file-loader": "^6.2.0",
+    "yo": "^4.3.1"
   }
 }
