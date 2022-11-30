@@ -189,18 +189,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_messagepage_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../styles/messagepage.css */ \"./styles/messagepage.css\");\n/* harmony import */ var _styles_messagepage_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_messagepage_css__WEBPACK_IMPORTED_MODULE_0__);\n\nfunction importAll(r) {\n  return r.keys().map(r);\n}\nvar images = importAll(__webpack_require__(\"./img sync \\\\.(png|jpg|svg)$\"));\nvar adddialog = document.querySelector('.bottom-button');\n\n//# sourceURL=webpack:///./scripts/dialogpage.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_dialogpage_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../styles/dialogpage.css */ \"./styles/dialogpage.css\");\n/* harmony import */ var _styles_dialogpage_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_dialogpage_css__WEBPACK_IMPORTED_MODULE_0__);\n\nfunction importAll(r) {\n  return r.keys().map(r);\n}\nvar images = importAll(__webpack_require__(\"./img sync \\\\.(png|jpg|svg)$\"));\nvar adddialog = document.querySelector('.bottom-button');\n\n//# sourceURL=webpack:///./scripts/dialogpage.js?");
 
 /***/ }),
 
-/***/ "./styles/messagepage.css":
-/*!********************************!*\
-  !*** ./styles/messagepage.css ***!
-  \********************************/
+/***/ "./styles/dialogpage.css":
+/*!*******************************!*\
+  !*** ./styles/dialogpage.css ***!
+  \*******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./styles/messagepage.css?");
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./styles/dialogpage.css?");
 
 /***/ })
 
