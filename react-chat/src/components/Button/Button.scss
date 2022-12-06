@@ -1,0 +1,16 @@
+.circleButton {
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    border: 0px;
+    transition: color 0.5s, background-color 0.5s;
+    margin: 10px;
+    padding: 0;
+}
+
+.circleButton:hover{
+    color: rgb(50, 151, 87);
+}

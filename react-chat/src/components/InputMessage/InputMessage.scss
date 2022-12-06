@@ -1,0 +1,13 @@
+input[type=submit] {
+    visibility: collapse;
+}
+
+input.form-input {
+    border: 0;
+    outline: none;
+    height: 30px;
+    font-size: 25px;
+    padding-left: 20px;
+    width: calc(100vw - 100px);
+    border-radius: 15px;
+}
