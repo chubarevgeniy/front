@@ -6,6 +6,8 @@ import Button from "../../components/Button/Button";
 import Middle from "../../components/Middle/Middle";
 import Dialog from "../../components/Dialog/Dialog";
 import AddDialog from "../../components/AddDialog/AddDialog";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { useState } from "react";
 
 function initDialogsStorage(){
@@ -15,6 +17,9 @@ function initDialogsStorage(){
 export default function PageChatList(props) {
     function goToDialog(id){
         props.setPageInf({page:"PageChat",id:id})
+    }
+    function goToProfile(){
+        props.setPageInf({page:"PageProfile",id:0})
     }
     let dialogs = localStorage.getItem('dialogs');
     if (!dialogs) {
@@ -50,14 +55,15 @@ export default function PageChatList(props) {
                         backgroundColor: "rgb(187, 226, 229)",
                         color: "rgb(28, 79, 121)"
                     }}
-                    icon = "pr"/>
+                    icon = {<AccountCircleIcon/>}
+                    onClick = {()=>goToProfile()}/>
                 <div style={{color:"rgb(187, 226, 229)"}}>NeTelegram</div>
                 <Button 
                     style = {{
                         backgroundColor: "rgb(187, 226, 229)",
                         color: "rgb(28, 79, 121)"
                     }}
-                    icon = "del"
+                    icon = {<DeleteForeverIcon />}
                     onClick = {()=>deleteAllDialogs()}
                     />
             </>)} />
@@ -69,7 +75,8 @@ export default function PageChatList(props) {
                         goToDialog = {goToDialog}/>
                     )}/>
         </div>
-        <AddDialog addDialogButton = {addDialogButton}/>
+        <AddDialog addDialogButton = {addDialogButton}>
+        </AddDialog>
         </>
     );
 }

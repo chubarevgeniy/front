@@ -13,8 +13,8 @@ export default function InputMessage(props) {
     return (
         <div>
             <form id={props.id} onSubmit={(e)=>{sendMessage(e,inputValue,props.Mes); setInputValue('')}}>
-                <input className="form-input" type="text" value = {inputValue} onChange={(e)=>setInputValue(e.target.value)}>
-                </input>
+                <textarea className="form-input" type="text" value = {inputValue} onChange={(e)=>setInputValue(e.target.value)}>
+                </textarea>
             </form>
         </div>
     );

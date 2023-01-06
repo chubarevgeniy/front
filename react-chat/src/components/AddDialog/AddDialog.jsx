@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import './AddDialog.scss'
+import './AddDialog.scss';
+import AddIcon from '@mui/icons-material/Add';
 
 export default function AddDialog(props) {
     const [isActive, setIsActive] = useState(false)
@@ -30,6 +31,8 @@ export default function AddDialog(props) {
     </div>
     <div 
     className="addDialogButton"
-    onClick = {isActive? ()=>props.addDialogButton(idInputValue,nameInputValue): ()=>setIsActive(true)}></div>
+    onClick = {isActive? ()=>props.addDialogButton(idInputValue,nameInputValue): ()=>setIsActive(true)}>
+        <AddIcon />
+    </div>
     </>)
 }

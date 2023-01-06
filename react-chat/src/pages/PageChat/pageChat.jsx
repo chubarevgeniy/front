@@ -8,6 +8,10 @@ import { useState } from "react";
 import InputMessage from "../../components/InputMessage/InputMessage";
 import Message from "../../components/Message/Message";
 import Middle from "../../components/Middle/Middle";
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import SendIcon from '@mui/icons-material/Send';
+import ForumIcon from '@mui/icons-material/Forum';
+import InfoIcon from '@mui/icons-material/Info';
 
 function InitMessagesStorage(id){
     localStorage.setItem('messages_'+id, JSON.stringify({'messages': []}));
@@ -52,7 +56,7 @@ export default function PageChat(props) {
                         backgroundColor: "rgb(187, 226, 229)",
                         color: "rgb(28, 79, 121)"
                     }}
-                    icon = "<="
+                    icon = {<ForumIcon/>}
                     onClick = {()=>{props.goToChatList()}}/>
                 <Avatar value = {av} />
                 <Button 
@@ -60,6 +64,7 @@ export default function PageChat(props) {
                         backgroundColor: "rgb(187, 226, 229)",
                         color: "rgb(28, 79, 121)"
                     }}
+                    icon = {<InfoIcon/>}
                     />
             </>)} />
             <Middle 
@@ -70,6 +75,7 @@ export default function PageChat(props) {
                         backgroundColor: "rgb(187, 226, 229)",
                         color: "rgb(28, 79, 121)"
                     }}
+                    icon = {<DeleteForeverIcon/>}
                     onClick = {()=>{InitMessagesStorage(props.id); setMes([]);}}/>
                 <InputMessage 
                     id = "InputMessage" 
@@ -80,7 +86,7 @@ export default function PageChat(props) {
                         backgroundColor: "rgb(187, 226, 229)",
                         color: "rgb(28, 79, 121)"
                     }} 
-                    icon = ">"
+                    icon = {<SendIcon/>}
                     form = "InputMessage"/>
             </>}/>
         </div>
