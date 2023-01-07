@@ -1,10 +1,13 @@
+@use "../../global.scss" as globalStyles;
+
+
 .addDialogWindow {
     display: flex;
     justify-content: center;
     align-items: end;
     height: 100vh;
     width: 100vw;
-    background-color: rgba(28, 79, 121,0.4);
+    background-color: globalStyles.$dark-blue-transperent;
     position: fixed;
     top: 0;
     left: 0;
@@ -18,7 +21,7 @@
     pointer-events: all;
 }
 
-.addDialog-form{
+.addDialogForm{
     display: flex;
     height: 60px;
     width: 60px;
@@ -26,11 +29,11 @@
     right: 20px;
     border-radius: 30px;
     margin-bottom: 20px;
-    background-color: rgb(28, 79, 121);
+    background-color: globalStyles.$dark-blue;
     transition: 0.4s;
 }
 
-.addDialog-form.active{
+.addDialogForm.active{
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -38,7 +41,7 @@
     align-self: flex-end;
     border-radius: 40px;
     margin-bottom: 10px;
-    background-color: rgb(187, 226, 229);
+    background-color: globalStyles.$light-blue;
     right: 10px;
     height: 180px;
     width: calc(100vw - 20px);
@@ -51,7 +54,7 @@
     bottom: 0px;
     justify-content: center;
     align-items: center;
-    background-color: rgba(28, 79, 121);
+    background-color: globalStyles.$dark-blue;
     height: 60px;
     width: 60px;
     border-radius:30px;
@@ -59,10 +62,10 @@
     transition: color 0.5s, background-color 0.5s;
     margin: 20px;
     padding: 0;
-    color: rgb(187, 226, 229);
+    color: globalStyles.$light-blue;
 }
 
-.id-input{
+.idInput{
     height: 0;
     width: 0;
     margin: 0;
@@ -75,13 +78,13 @@
     transition: 0.4s;
 }
 
-.id-input.active{
+.idInput.active{
     height: 30px;
     width: calc(50vw - 100px);
     margin: 50px;
 }
 
-.name-input{
+.nameInput{
     height: 0;
     width: 0;
     margin: 0;
@@ -94,7 +97,7 @@
     transition: 0.4s;
 }
 
-.name-input.active{
+.nameInput.active{
     height: 30px;
     width: calc(50vw - 100px);
     margin: 50px;

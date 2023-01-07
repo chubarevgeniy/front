@@ -1,10 +1,10 @@
 import React from "react";
-import './Middle.scss'
+import styles from './Middle.module.scss';
 
 export default function Middle(props){
     return <>
-    <div className="middle" style={props.style}>
-        {props.content}
+    <div className={styles.middle} style={props.style}>
+        {props.children}
     </div>
     </>
 }

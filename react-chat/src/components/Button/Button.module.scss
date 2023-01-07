@@ -1,8 +1,11 @@
+@use "../../global.scss" as globalStyles;
+
 .circleButton {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(255, 255, 255);
+    background-color: globalStyles.$light-blue;
+    color: globalStyles.$dark-blue;
     height: 30px;
     width: 30px;
     border-radius: 15px;
@@ -13,5 +16,7 @@
 }
 
 .circleButton:hover{
-    color: rgb(50, 151, 87);
+    background-color: globalStyles.$dark-blue;
+    color: globalStyles.$light-blue;
 }
+

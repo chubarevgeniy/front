@@ -1,10 +1,10 @@
-import './Bar.scss';
+import styles from './Bar.module.scss';
 
 export default function Bar(props){
     return (
         <>
-        <div className='bar'>
-            {props.value}
+        <div className={styles.bar}>
+            {props.children}
         </div>
         </>
     );

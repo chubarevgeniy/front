@@ -3,9 +3,11 @@ import './PageChatList.scss'
 import Bar from "../../components/Bar/Bar";
 import av from './../../logo.svg'
 import Button from "../../components/Button/Button";
+import NButton from "../../components/NButton/NButton";
 import Middle from "../../components/Middle/Middle";
 import Dialog from "../../components/Dialog/Dialog";
 import AddDialog from "../../components/AddDialog/AddDialog";
+import VerticalHandler from "../../components/VerticalHandler/VerticalHandler";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { useState } from "react";
@@ -48,33 +50,25 @@ export default function PageChatList(props) {
 
     return (
         <>
-        <div className="vertical-holder">
-            <Bar value = {(<>
-                <Button 
-                    style = {{
-                        backgroundColor: "rgb(187, 226, 229)",
-                        color: "rgb(28, 79, 121)"
-                    }}
-                    icon = {<AccountCircleIcon/>}
-                    onClick = {()=>goToProfile()}/>
+        <VerticalHandler>
+            <Bar>
+                <NButton onClick = {()=>goToProfile()}>
+                    <AccountCircleIcon/>
+                </NButton>
                 <div style={{color:"rgb(187, 226, 229)"}}>NeTelegram</div>
-                <Button 
-                    style = {{
-                        backgroundColor: "rgb(187, 226, 229)",
-                        color: "rgb(28, 79, 121)"
-                    }}
-                    icon = {<DeleteForeverIcon />}
-                    onClick = {()=>deleteAllDialogs()}
-                    />
-            </>)} />
-            <Middle style={{flexDirection: "column", justifyContent: "start"}}
-                content = {dias.slice().map(
+                <NButton onClick = {()=>deleteAllDialogs()}>
+                    <DeleteForeverIcon/>
+                </NButton>
+            </Bar>
+            <Middle style={{flexDirection: "column", justifyContent: "start"}}>
+                {dias.slice().map(
                     (val,ind)=><Dialog 
                         Dialog={val} 
                         key={ind} 
                         goToDialog = {goToDialog}/>
-                    )}/>
-        </div>
+                    )}
+            </Middle>
+        </VerticalHandler>
         <AddDialog addDialogButton = {addDialogButton}>
         </AddDialog>
         </>

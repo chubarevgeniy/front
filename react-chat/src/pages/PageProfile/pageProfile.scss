@@ -1,3 +1,5 @@
+@use "../../global.scss" as globalStyles;
+
 .profileInfo{
     display: flex;
     width: calc(100vw - 100px);
@@ -5,7 +7,7 @@
     justify-content: center;
 }
 
-.name-field{
+.nameField{
     border: 0;
     outline: none;
     padding-left: 5px;
@@ -14,7 +16,7 @@
     margin: 10px;
 }
 
-.desc-field{
+.descField{
     border: 0;
     outline: none;
     padding-left: 5px;
@@ -25,18 +27,18 @@
     resize: none;
 }
 
-.desc-field::-webkit-scrollbar {
+.descField::-webkit-scrollbar {
     width: 10px;
     min-height: 25px;
 }
 
-.desc-field::-webkit-scrollbar-track {
+.descField::-webkit-scrollbar-track {
     /*box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
     border-radius: 10px;
     min-height: 25px;
 }
 
-.desc-field::-webkit-scrollbar-thumb {
+.descField::-webkit-scrollbar-thumb {
     border-radius: 10px;
     min-height: 25px;
     /*box-shadow: inset 0 0 6px rgba(0,0,0,0.5); */

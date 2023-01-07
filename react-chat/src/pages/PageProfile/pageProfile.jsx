@@ -3,8 +3,10 @@ import './pageProfile.scss'
 import Bar from "../../components/Bar/Bar";
 import av from './../../logo.svg'
 import Button from "../../components/Button/Button";
+import NButton from "../../components/NButton/NButton";
 import AvatarBig from "../../components/AvatarBig/AvatarBig";
 import Middle from "../../components/Middle/Middle";
+import VerticalHandler from "../../components/VerticalHandler/VerticalHandler";
 import { useState } from "react";
 import ForumIcon from '@mui/icons-material/Forum';
 import DoneIcon from '@mui/icons-material/Done';
@@ -16,28 +18,16 @@ function saveChanges(name,desc){
 export default function PageProfile(props){
     const [nameField,setNameField] = useState('jeka')
     const [descField,setDescField] = useState('best person')
-    return <>
-    <div className="vertical-holder">
-        <Bar value = {(<>
-            <Button 
-                    style = {{
-                        backgroundColor: "rgb(187, 226, 229)",
-                        color: "rgb(28, 79, 121)"
-                    }}
-                    icon = {<ForumIcon/>}
-                    onClick = {()=>{props.goToChatList()}}
-            />
-            <Button 
-                    style = {{
-                        backgroundColor: "rgb(187, 226, 229)",
-                        color: "rgb(28, 79, 121)"
-                    }}
-                    icon = {<DoneIcon/>}
-                    onClick = {()=>{saveChanges(nameField,descField)}}
-            />        
-        </>)}/>
-        <Middle style={{flexDirection: "column", justifyContent: "center", alignItems: "center"}}
-                content = {<>
+    return <VerticalHandler>
+        <Bar>
+            <NButton onClick = {()=>{props.goToChatList()}}>
+                    <ForumIcon/>
+            </NButton>
+            <NButton onClick = {()=>{saveChanges(nameField,descField)}}>
+                    <DoneIcon/>
+            </NButton>       
+        </Bar>
+        <Middle style={{flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
                 <AvatarBig value = {av}> </AvatarBig>
                 <form id = 'myProfile' className="profileInfo">
                     <input 
@@ -51,8 +41,6 @@ export default function PageProfile(props){
                     onChange={(e)=>setDescField(e.target.value)}>
                     </textarea>
                 </form>
-                </>
-                }/>
-    </div>
-    </>
+        </Middle>     
+    </VerticalHandler>
 }

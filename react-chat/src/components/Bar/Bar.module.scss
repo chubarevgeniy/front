@@ -1,9 +1,11 @@
+@use "../../global.scss" as globalStyles;
+
 .bar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     min-height: 50px;
-    background-color: rgb(28, 79, 121);
+    background-color: globalStyles.$dark-blue;
     border-radius: 25px;
 }

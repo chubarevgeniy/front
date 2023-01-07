@@ -1,4 +1,6 @@
-.message-l {
+@use "../../global.scss" as globalStyles;
+
+.messageL {
     display: flex;
     flex-direction: column;
     margin: 5px 5px 5px 5px;
@@ -6,11 +8,11 @@
     border-radius: 5px;
     justify-content: end;
     width: fit-content;
-    background-color: rgb(28, 79, 121);
+    background-color: globalStyles.$dark-blue;
     max-width: 70vw;
 }
 
-.message-r {
+.messageR {
     display: flex;
     flex-direction: column;
     justify-content: end;
@@ -18,11 +20,11 @@
     margin: 5px 5px 5px 5px;
     padding: 5px 5px 5px 5px;
     border-radius: 5px;
-    background-color: rgb(28, 79, 121);
+    background-color: globalStyles.$dark-blue;
     max-width: 70vw;
 }
 
-.message-text {
+.messageText {
     display: inline-block;
     color:aliceblue;
     width: fit-content;
@@ -31,26 +33,26 @@
     word-wrap: break-word;
 }
 
-.message-head {
+.messageHead {
     display: flex;
     justify-content: space-between;
     padding: 2px 2px 2px 2px;
     max-width: 70vw;
 }
 
-.message-time {
+.messageTime {
     display: flex;
     align-self: center;
-    color:rgb(187, 226, 229);
+    color:globalStyles.$light-blue;
     width: fit-content;
     font-size: 10px;
     align-items: center;
     justify-content: center;
 }
 
-.message-owner {
+.messageOwner {
     display: flex;
     width: fit-content;
-    color:rgb(187, 226, 229);
+    color:globalStyles.$light-blue;
     font-size: 20px;
 }

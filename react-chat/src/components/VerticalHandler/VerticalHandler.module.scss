@@ -1,0 +1,9 @@
+@use "../../global.scss" as globalStyles;
+
+.verticalHandler {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-height: 100vh;
+    min-height: 300px;
+}

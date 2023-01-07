@@ -4,6 +4,8 @@ import Bar from "../../components/Bar/Bar";
 import Avatar from "../../components/Avatar/Avatar.jsx";
 import av from './../../logo.svg'
 import Button from "../../components/Button/Button";
+import NButton from "../../components/NButton/NButton";
+import VerticalHandler from "../../components/VerticalHandler/VerticalHandler";
 import { useState } from "react";
 import InputMessage from "../../components/InputMessage/InputMessage";
 import Message from "../../components/Message/Message";
@@ -49,46 +51,31 @@ export default function PageChat(props) {
     }
 
     return (
-        <div className="vertical-holder">
-            <Bar value = {(<>
-                <Button 
-                    style = {{
-                        backgroundColor: "rgb(187, 226, 229)",
-                        color: "rgb(28, 79, 121)"
-                    }}
-                    icon = {<ForumIcon/>}
-                    onClick = {()=>{props.goToChatList()}}/>
+        <VerticalHandler>
+            <Bar>
+                <NButton onClick = {()=>{props.goToChatList()}}>
+                    <ForumIcon/>
+                </NButton>
                 <Avatar value = {av} />
-                <Button 
-                    style = {{
-                        backgroundColor: "rgb(187, 226, 229)",
-                        color: "rgb(28, 79, 121)"
-                    }}
-                    icon = {<InfoIcon/>}
-                    />
-            </>)} />
-            <Middle 
-                content = {mes.slice().reverse().map((val,ind)=><Message Message={val} key={ind}/>)}/>
-            <Bar value = {<>
-                <Button 
-                    style = {{
-                        backgroundColor: "rgb(187, 226, 229)",
-                        color: "rgb(28, 79, 121)"
-                    }}
-                    icon = {<DeleteForeverIcon/>}
-                    onClick = {()=>{InitMessagesStorage(props.id); setMes([]);}}/>
+                <NButton>
+                    <InfoIcon/>
+                </NButton>
+            </Bar>
+            <Middle>
+                {mes.slice().reverse().map((val,ind)=><Message Message={val} key={ind}/>)}
+            </Middle>
+            <Bar>
+                <NButton onClick = {()=>{InitMessagesStorage(props.id); setMes([]);}}>
+                    <DeleteForeverIcon/>
+                </NButton>
                 <InputMessage 
                     id = "InputMessage" 
                     Mes = {sendMessage}
                     chatId = {props.id}/>
-                <Button 
-                    style = {{
-                        backgroundColor: "rgb(187, 226, 229)",
-                        color: "rgb(28, 79, 121)"
-                    }} 
-                    icon = {<SendIcon/>}
-                    form = "InputMessage"/>
-            </>}/>
-        </div>
+                <NButton form = "InputMessage">
+                    <SendIcon/>
+                </NButton>
+            </Bar>
+        </VerticalHandler>
     );
 }

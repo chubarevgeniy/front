@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import './AddDialog.scss';
+import styles from './AddDialog.module.scss';
 import AddIcon from '@mui/icons-material/Add';
 
 export default function AddDialog(props) {
@@ -10,18 +10,18 @@ export default function AddDialog(props) {
     return(
     <>
     <div 
-    className={isActive? "addDialogWindow active": "addDialogWindow"}
+    className={isActive? `${styles.addDialogWindow} ${styles.active}`: styles.addDialogWindow}
     onClick = {()=>setIsActive(false)}>
-        <div className={isActive? "addDialog-form active": "addDialog-form"} onClick={e=>e.stopPropagation()}>
-            <form id = 'addDialog' className="addForm">
+        <div className={isActive? `${styles.addDialogForm} ${styles.active}`: styles.addDialogForm} onClick={e=>e.stopPropagation()}>
+            <form id = 'addDialog' className={styles.addForm}>
                 <input 
-                className={isActive? "id-input active": "id-input"}
+                className={isActive? `${styles.idInput} ${styles.active}`: styles.idInput}
                 type="text" value = {idInputValue} 
                 onChange={(e)=>setIdInputValue(e.target.value)}
                 placeholder = "Enter id">
                 </input>
                 <input 
-                className={isActive? "name-input active": "name-input"}
+                className={isActive? `${styles.nameInput} ${styles.active}`: styles.nameInput}
                 type="text" value = {nameInputValue} 
                 onChange={(e)=>setNameInputValue(e.target.value)}
                 placeholder = "Enter Name">
@@ -30,7 +30,7 @@ export default function AddDialog(props) {
         </div>
     </div>
     <div 
-    className="addDialogButton"
+    className={styles.addDialogButton}
     onClick = {isActive? ()=>props.addDialogButton(idInputValue,nameInputValue): ()=>setIsActive(true)}>
         <AddIcon />
     </div>

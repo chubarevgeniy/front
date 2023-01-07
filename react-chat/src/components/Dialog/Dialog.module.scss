@@ -1,21 +1,23 @@
+@use "../../global.scss" as globalStyles;
+
 .dialog{
     display: flex;
     flex-direction: row;
     border: 0;
     border-bottom: 1px solid;
-    border-color: rgba(28, 79, 121, 0.152);
+    border-color: globalStyles.$dark-blue-transperent;
     height:60px;
-    background-color: rgb(187, 226, 229);
-    color:rgb(28, 79, 121);
+    background-color: globalStyles.$light-blue;
+    color:globalStyles.$dark-blue;
     transition: background-color 0.5s, color 0.5s;
 }
 
 .dialog:hover{
-    background-color: rgba(28, 79, 121);
-    color: rgb(187, 226, 229);
+    background-color: globalStyles.$dark-blue;
+    color: globalStyles.$light-blue;
 }
 
-.dialog-head {
+.dialogHead {
     display: flex;
     width: calc(100vw - 80px);
     flex-direction: row;
@@ -23,20 +25,20 @@
     border: 0px;
 }
 
-.dialog-owner {
+.dialogOwner {
     display: flex;
     align-items: flex-end;
     justify-content: center;
     font-size: 22px;
 }
 
-.dialog-time{
+.dialogTime{
     display: flex;
     align-items: flex-end;
     justify-content: center;
 }
 
-.dialog-left{
+.dialogLeft{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -45,7 +47,7 @@
     border: 0px;
 }
 
-.dialog-right{
+.dialogRight{
     display: flex;
     flex-direction: column;
     height: 47px;
@@ -53,7 +55,7 @@
     border: 0px;
 }
 
-.dialog-text{
+.dialogText{
     display: flex;
     border: 0px;
     max-width: 50vw;
