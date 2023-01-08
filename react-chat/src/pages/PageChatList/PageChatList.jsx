@@ -11,18 +11,13 @@ import VerticalHandler from "../../components/VerticalHandler/VerticalHandler";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { useState } from "react";
+import {Link} from "react-router-dom";
 
 function initDialogsStorage(){
     localStorage.setItem('dialogs', JSON.stringify({'dialogs':[]}));
 }
 
 export default function PageChatList(props) {
-    function goToDialog(id){
-        props.setPageInf({page:"PageChat",id:id})
-    }
-    function goToProfile(){
-        props.setPageInf({page:"PageProfile",id:0})
-    }
     let dialogs = localStorage.getItem('dialogs');
     if (!dialogs) {
         initDialogsStorage()
@@ -39,22 +34,24 @@ export default function PageChatList(props) {
     function addDialogButton(id,name){
         const dias_copy = dias.slice()
         if (dias_copy.find(dialog => dialog.id === id)){
-            goToDialog(id)
+            //goToDialog(id)
             return
         }
         dias_copy.push({avatar:av,name:name,id:id,lastM:'',time:'',longTime:JSON.stringify(new Date())})
         localStorage.setItem('dialogs',JSON.stringify({'dialogs':dias_copy}))
         setDias(dias_copy)
-        goToDialog(id)
+        //goToDialog(id)
     }
 
     return (
         <>
         <VerticalHandler>
             <Bar>
-                <NButton onClick = {()=>goToProfile()}>
-                    <AccountCircleIcon/>
-                </NButton>
+                <Link to="/profile">
+                    <NButton>
+                        <AccountCircleIcon/>
+                    </NButton>
+                </Link>
                 <div style={{color:"rgb(187, 226, 229)"}}>NeTelegram</div>
                 <NButton onClick = {()=>deleteAllDialogs()}>
                     <DeleteForeverIcon/>
@@ -62,10 +59,9 @@ export default function PageChatList(props) {
             </Bar>
             <Middle style={{flexDirection: "column", justifyContent: "start"}}>
                 {dias.slice().map(
-                    (val,ind)=><Dialog 
-                        Dialog={val} 
-                        key={ind} 
-                        goToDialog = {goToDialog}/>
+                    (val,ind)=><Link key={ind} to={`/chat/${val.id}`} style={{ textDecoration: 'none'}}>
+                            <Dialog Dialog={val} />
+                        </Link>
                     )}
             </Middle>
         </VerticalHandler>

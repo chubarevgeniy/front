@@ -16,8 +16,9 @@ input[type=submit] {
     min-height: 28px;
     max-height: 35px;
     font-size: 20px;
-    padding-left: 20px;
-    width: calc(100vw - 100px);
+    padding-left: 10px;
+    padding-top: 10px;
+    width: calc(100vw - 120px);
     border-radius: 15px;
     resize:none;
 }

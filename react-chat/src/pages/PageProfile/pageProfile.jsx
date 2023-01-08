@@ -10,6 +10,7 @@ import VerticalHandler from "../../components/VerticalHandler/VerticalHandler";
 import { useState } from "react";
 import ForumIcon from '@mui/icons-material/Forum';
 import DoneIcon from '@mui/icons-material/Done';
+import {Link} from "react-router-dom";
 
 function saveChanges(name,desc){
     console.log('hi'+name+desc);
@@ -20,9 +21,11 @@ export default function PageProfile(props){
     const [descField,setDescField] = useState('best person')
     return <VerticalHandler>
         <Bar>
-            <NButton onClick = {()=>{props.goToChatList()}}>
+            <Link key = "adasas" to="/">
+            <NButton onClick = {()=>{console.log("hi")}}>
                     <ForumIcon/>
             </NButton>
+            </Link>
             <NButton onClick = {()=>{saveChanges(nameField,descField)}}>
                     <DoneIcon/>
             </NButton>       

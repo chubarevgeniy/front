@@ -14,18 +14,20 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import SendIcon from '@mui/icons-material/Send';
 import ForumIcon from '@mui/icons-material/Forum';
 import InfoIcon from '@mui/icons-material/Info';
+import {Link} from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 function InitMessagesStorage(id){
     localStorage.setItem('messages_'+id, JSON.stringify({'messages': []}));
 }
 
-export default function PageChat(props) {
-
-    let messages = localStorage.getItem('messages_'+props.id);
+export default function PageChat() {
+    const {chat_id} = useParams(); 
+    let messages = localStorage.getItem('messages_'+chat_id);
     if (!messages) {
-        InitMessagesStorage(props.id);
+        InitMessagesStorage(chat_id);
         console.log('hi')
-        messages = localStorage.getItem('messages_'+props.id);
+        messages = localStorage.getItem('messages_'+chat_id);
     }
     
     const [mes,setMes] = useState(JSON.parse(messages).messages);
@@ -36,13 +38,13 @@ export default function PageChat(props) {
         let owner = "me"
         let dialogs = JSON.parse(localStorage.getItem('dialogs')).dialogs
         if (value[0]=="<"){
-            owner = dialogs.find(dialog => dialog.id === props.id).name
+            owner = dialogs.find(dialog => dialog.id === chat_id).name
             value = value.slice(1)
         }
         mes_copy.push({owner:owner,time:time_s,text:value})
-        localStorage.setItem('messages_'+props.id, JSON.stringify({'messages': mes_copy}));
+        localStorage.setItem('messages_'+chat_id, JSON.stringify({'messages': mes_copy}));
         setMes(mes_copy)
-        let dialog = dialogs.find(dialog => dialog.id === props.id)
+        let dialog = dialogs.find(dialog => dialog.id === chat_id)
         dialog.lastM = value.slice(0,40)+'...'
         dialog.time = time_s
         dialog.longTime = JSON.stringify(time)
@@ -53,9 +55,11 @@ export default function PageChat(props) {
     return (
         <VerticalHandler>
             <Bar>
-                <NButton onClick = {()=>{props.goToChatList()}}>
-                    <ForumIcon/>
-                </NButton>
+                <Link to="/">
+                    <NButton>
+                        <ForumIcon/>
+                    </NButton>
+                </Link>
                 <Avatar value = {av} />
                 <NButton>
                     <InfoIcon/>
@@ -65,13 +69,13 @@ export default function PageChat(props) {
                 {mes.slice().reverse().map((val,ind)=><Message Message={val} key={ind}/>)}
             </Middle>
             <Bar>
-                <NButton onClick = {()=>{InitMessagesStorage(props.id); setMes([]);}}>
+                <NButton onClick = {()=>{InitMessagesStorage(chat_id); setMes([]);}}>
                     <DeleteForeverIcon/>
                 </NButton>
                 <InputMessage 
                     id = "InputMessage" 
                     Mes = {sendMessage}
-                    chatId = {props.id}/>
+                    chatId = {chat_id}/>
                 <NButton form = "InputMessage">
                     <SendIcon/>
                 </NButton>

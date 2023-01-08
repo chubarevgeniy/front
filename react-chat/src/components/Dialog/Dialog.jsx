@@ -8,7 +8,7 @@ export default function Dialog(props){
     const [id, setId] = useState(props.Dialog.id)
 
     return <>
-    <button className={styles.dialog} onClick={()=>props.goToDialog(id)}>
+    <button className={styles.dialog}>
         <div className={styles.dialogLeft}>
             <Avatar value = {props.Dialog.avatar}/>
         </div>
