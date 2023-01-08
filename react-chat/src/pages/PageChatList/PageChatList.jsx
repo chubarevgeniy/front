@@ -1,5 +1,5 @@
 import React from "react";
-import './PageChatList.scss'
+import styles from './PageChatList.module.scss'
 import Bar from "../../components/Bar/Bar";
 import av from './../../logo.svg'
 import Button from "../../components/Button/Button";

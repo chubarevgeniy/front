@@ -1,5 +1,5 @@
 import React from "react";
-import "./pageChat.scss";
+import styles from "./pageChat.module.scss";
 import Bar from "../../components/Bar/Bar";
 import Avatar from "../../components/Avatar/Avatar.jsx";
 import av from './../../logo.svg'

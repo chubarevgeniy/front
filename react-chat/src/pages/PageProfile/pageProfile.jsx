@@ -1,5 +1,5 @@
 import React from "react";
-import './pageProfile.scss'
+import styles from './pageProfile.module.scss'
 import Bar from "../../components/Bar/Bar";
 import av from './../../logo.svg'
 import Button from "../../components/Button/Button";
@@ -29,14 +29,14 @@ export default function PageProfile(props){
         </Bar>
         <Middle style={{flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
                 <AvatarBig value = {av}> </AvatarBig>
-                <form id = 'myProfile' className="profileInfo">
+                <form id = 'myProfile' className={styles.profileInfo}>
                     <input 
-                    className={"name-field"}
+                    className={styles.nameField}
                     type="text" value = {nameField} 
                     onChange={(e)=>setNameField(e.target.value)}>
                     </input>
                     <textarea
-                    className={"desc-field"}
+                    className={styles.descField}
                     type="text" value = {descField} 
                     onChange={(e)=>setDescField(e.target.value)}>
                     </textarea>
